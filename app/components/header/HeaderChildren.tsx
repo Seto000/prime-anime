@@ -8,9 +8,9 @@ import pfp from "../../../public/pfp.jpg";
 export const HeaderChildren = () => {
   return (
     <>
-      <div className="flex items-center justify-between h-12 lg:justify-center lg:h-10 xl:h-12 xl:gap-3.5 bg-blue1 lg:rounded-lg lg:pl-4 lg:shadow-2xl">
-        <ButtonWithDropdown text="Menu" btnStyles="lg:hidden" />
-        <h1 className="text-lg lg:mr-8 xl:text-xl">prime anime</h1>
+      <div className="flex items-center justify-between h-12 lg:justify-center lg:h-10 xl:h-12 xl:gap-3.5 bg-blue1 lg:rounded-lg lg:pl-4 lg:shadow-2xl 2xl:h-14">
+        <ButtonWithDropdown text="Menu" btnStyles="lg:hidden text-white" />
+        <Link href="/" className="text-lg lg:mr-8 xl:text-xl 2xl:text-2xl">prime anime</Link>
         <ButtonWithDropdown
           text="Home"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
@@ -19,7 +19,11 @@ export const HeaderChildren = () => {
           text="Store"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
         />
-        <LinkWithLabel href="/" text="live tv" linkStyles="hidden lg:flex lg:text-base xl:text-xl">
+        <LinkWithLabel
+          href="/"
+          text="live tv"
+          linkStyles="hidden lg:flex lg:text-base xl:text-xl"
+        >
           Live TV
         </LinkWithLabel>
         <ButtonWithDropdown
@@ -38,7 +42,7 @@ export const HeaderChildren = () => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="#b3b4b7"
-              className="w-7 h-7"
+              className="w-7 h-7 2xl:w-8 2xl:h-8"
             >
               <path
                 strokeLinecap="round"
@@ -47,14 +51,14 @@ export const HeaderChildren = () => {
               />
             </svg>
           </button>
-          <Link href="/" className="flex items-center px-3 h-full">
+          <div className="flex items-center px-3 h-full cursor-pointer">
             <p className="mr-4 text-muted text-lg hidden xl:block">Gabriel</p>
             <Image
               src={pfp}
               alt="Profile picture"
-              className="rounded-full w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8"
+              className="rounded-full w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
             />
-          </Link>
+          </div>
         </div>
       </div>
       <div className="flex items-center gap-2 h-12 pl-6 text-muted font-semibold lg:hidden header-gradient">

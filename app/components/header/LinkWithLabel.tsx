@@ -3,17 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+type LinkWLabelType = {
+  children: React.ReactNode;
+  text: string;
+  href: string;
+  linkStyles?: string;
+};
+
 export const LinkWithLabel = ({
   children,
   text,
   href,
   linkStyles,
-}: {
-  children: React.ReactNode;
-  text: string;
-  href: string;
-  linkStyles?: string;
-}) => {
+}: LinkWLabelType) => {
   const currentPath = usePathname();
 
   return (

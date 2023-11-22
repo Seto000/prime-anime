@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from "react";
 
-export const Header = ({ children }: { children: React.ReactNode }) => {
+type HeaderType = {
+  children: React.ReactNode;
+};
+
+export const Header = ({ children }: HeaderType) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
