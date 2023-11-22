@@ -1,6 +1,22 @@
-export const ButtonWithDropdown = ({ text }: { text: string }) => {
+"use client";
+
+import { usePathname } from "next/navigation";
+
+export const ButtonWithDropdown = ({
+  text,
+  btnStyles,
+}: {
+  text: string;
+  btnStyles: string;
+}) => {
+  const currentPath = usePathname();
+
   return (
-    <button className="flex items-center gap-1 px-3 h-full md:text-lg">
+    <button
+      className={`flex items-center gap-1 px-3 h-full md:text-lg ${btnStyles} ${
+        currentPath === `/${text.toLowerCase()}` ? "text-inherit border-b-[3px] border-white" : "text-muted"
+      }`}
+    >
       {text}
       <svg
         xmlns="http://www.w3.org/2000/svg"

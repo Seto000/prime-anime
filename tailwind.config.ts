@@ -12,9 +12,13 @@ const config: Config = {
         bgBlue1: "#00050d",
       },
       textColor: {
-        muted: "#AAAAAA"
-      }
+        muted: "#AAAAAA",
+      },
+      colors: {
+        blue1: "#00050d",
+      },
     },
+  
   },
   plugins: [],
 };
