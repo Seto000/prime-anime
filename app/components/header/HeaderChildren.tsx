@@ -8,9 +8,9 @@ import pfp from "../../../public/pfp.jpg";
 export const HeaderChildren = () => {
   return (
     <>
-      <div className="flex items-center justify-between h-12 lg:justify-center lg:h-10 xl:h-12 xl:gap-3.5 bg-blue1 lg:rounded-lg lg:pl-4 lg:shadow-2xl 2xl:h-14">
+      <div className="flex items-center justify-between h-12 lg:justify-center lg:h-10 xl:h-12 xl:gap-3.5 bg-blue1 lg:rounded-lg lg:pl-4 2xl:h-14">
         <ButtonWithDropdown text="Menu" btnStyles="lg:hidden text-white" />
-        <Link href="/" className="text-lg lg:mr-8 xl:text-xl 2xl:text-2xl">prime anime</Link>
+        <Link href="/home" className="text-lg lg:mr-8 xl:text-xl 2xl:text-2xl">prime anime</Link>
         <ButtonWithDropdown
           text="Home"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"

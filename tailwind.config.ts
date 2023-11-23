@@ -18,7 +18,9 @@ const config: Config = {
         blue1: "#00050d",
       },
     },
-  
+    boxShadow: {
+      custom: "0 4px 8px 2px rgba(0,5,13,.5)",
+    },
   },
   plugins: [],
 };

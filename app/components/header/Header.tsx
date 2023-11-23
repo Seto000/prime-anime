@@ -25,7 +25,7 @@ export const Header = ({ children }: HeaderType) => {
   return (
     <header
       className={`w-full lg:w-fit lg:mx-auto text-white font-bold sticky top-0 z-50 transition-all duration-300 ease-in-out ${
-        isScrolled && "lg:top-2 xl:top-3"
+        isScrolled && "lg:top-2 xl:top-3 [&>*:first-child]:lg:shadow-custom"
       }`}
     >
       {children}
