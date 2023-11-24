@@ -18,13 +18,19 @@
 
 .swiper-button-prev,
 .swiper-button-next {
+  top: var(--swiper-navigation-top-offset, 48%) !important;
   color: white !important;
 }
 
-.swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 1rem !important; 
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 1rem !important;
 }
 
 .swiper-pagination-bullet {
   background: white !important;
+}
+
+.swiper-pagination-horizontal {
+  position: initial !important;
 }

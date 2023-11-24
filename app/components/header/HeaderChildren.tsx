@@ -51,14 +51,14 @@ export const HeaderChildren = () => {
               />
             </svg>
           </button>
-          <div className="flex items-center px-3 h-full cursor-pointer">
+          <button className="flex items-center px-3 h-full">
             <p className="mr-4 text-muted text-lg hidden xl:block">Gabriel</p>
             <Image
               src={pfp}
               alt="Profile picture"
               className="rounded-full w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
             />
-          </div>
+          </button>
         </div>
       </div>
       <div className="flex items-center gap-2 h-12 pl-6 text-muted font-semibold lg:hidden header-gradient">
