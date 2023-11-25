@@ -141,7 +141,7 @@ export const CarouselItem = ({
             <motion.button
               whileHover={scaleUp}
               whileTap={scaleDown}
-              className="rounded-full text-white active:bg-white hover:bg-white active:text-black hover:text-black p-4 mButton mr-2 transition-colors duration-300"
+              className="rounded-full text-white active:bg-white active:text-black p-4 mButton mr-2 transition-colors duration-300"
             >
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
@@ -167,7 +167,7 @@ export const CarouselItem = ({
             <motion.button
               whileHover={scaleUp}
               whileTap={scaleDown}
-              className="rounded-full text-white active:bg-white hover:bg-white active:text-black hover:text-black p-4 mButton transition-colors duration-300"
+              className="rounded-full text-white active:bg-white  active:text-black  p-4 mButton transition-colors duration-300"
             >
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"

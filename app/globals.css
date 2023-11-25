@@ -39,4 +39,8 @@
   .mButton {
     background-color: hsla(0, 0%, 100%, 0.2);
   }
+  .mButton:hover {
+    background-color: white;
+    color: black;
+  }
 }
