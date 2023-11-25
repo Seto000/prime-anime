@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
 type CarouselItemType = {
   heroImg: string;
@@ -8,9 +9,30 @@ type CarouselItemType = {
   mRating: string;
 };
 
-export const CarouselItem = ({ heroImg, titleImg, mRating }: CarouselItemType) => {
+export const CarouselItem = ({
+  heroImg,
+  titleImg,
+  mRating,
+}: CarouselItemType) => {
+  const [_, animate] = useAnimate();
+
+  useEffect(() => {
+    const elem1 = document.querySelector(
+      ".swiper-button-prev"
+    ) as HTMLDivElement;
+    const elem2 = document.querySelector(
+      ".swiper-button-next"
+    ) as HTMLDivElement;
+    elem1.onmouseenter = () => animate(elem1, { scale: 1.5 });
+    elem1.onmouseleave = () => animate(elem1, { scale: 1 });
+    elem2.onmouseenter = () => animate(elem2, { scale: 1.5 });
+    elem2.onmouseleave = () => animate(elem2, { scale: 1 });
+  }, [animate]);
+
   return (
-    <motion.div className="mx-auto aspect-video lg:aspect-[3/1] max-w-[92%] relative">
+    <motion.div
+      className="mx-auto aspect-video lg:aspect-[3/1] max-w-[92%] relative"
+    >
       <Image
         fill
         src={heroImg}
