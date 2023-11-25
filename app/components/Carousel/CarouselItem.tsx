@@ -16,6 +16,9 @@ export const CarouselItem = ({
 }: CarouselItemType) => {
   const [_, animate] = useAnimate();
 
+  const scaleUp = { scale: 1.1 };
+  const scaleDown = { scale: 0.9 };
+
   useEffect(() => {
     const elem1 = document.querySelector(
       ".swiper-button-prev"
@@ -30,9 +33,7 @@ export const CarouselItem = ({
   }, [animate]);
 
   return (
-    <motion.div
-      className="mx-auto aspect-video lg:aspect-[3/1] max-w-[92%] relative"
-    >
+    <motion.div className="mx-auto aspect-video lg:aspect-[3/1] max-w-[92%] relative">
       <Image
         fill
         src={heroImg}
@@ -106,31 +107,40 @@ export const CarouselItem = ({
           </span>
         </div>
         <div className="hidden lg:flex lg:gap-4 xl:gap-6 lg:items-center">
-          <Link href="/" className="rounded-full bg-white p-4">
-            <svg
-              className="h-10 w-10 xl:h-12 xl:w-12"
-              viewBox="0 0 24 24"
-              role="img"
-              aria-hidden="true"
-            >
-              <title>Play</title>
+          <motion.span
+            whileHover={scaleUp}
+            whileTap={scaleDown}
+            className="flex rounded-full bg-white group"
+          >
+            <Link href="/" className="p-4">
               <svg
                 className="h-10 w-10 xl:h-12 xl:w-12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-hidden="true"
               >
-                <path
-                  d="M6.643 3.069 C 6.546 3.103,6.392 3.206,6.300 3.298 C 5.973 3.624,6.000 2.855,6.000 12.000 C 6.000 21.144,5.974 20.376,6.299 20.701 C 6.568 20.970,6.964 21.065,7.308 20.944 C 7.580 20.848,20.606 12.815,20.748 12.656 C 21.074 12.289,21.074 11.710,20.748 11.345 C 20.607 11.188,7.572 3.150,7.305 3.055 C 7.107 2.985,6.867 2.990,6.643 3.069 "
-                  fill="currentColor"
-                  stroke="none"
-                  fillRule="evenodd"
-                ></path>
+                <title>Play</title>
+                <svg
+                  className="h-10 w-10 xl:h-12 xl:w-12 fill-black group-hover:fill-[#4d4d4d]"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.643 3.069 C 6.546 3.103,6.392 3.206,6.300 3.298 C 5.973 3.624,6.000 2.855,6.000 12.000 C 6.000 21.144,5.974 20.376,6.299 20.701 C 6.568 20.970,6.964 21.065,7.308 20.944 C 7.580 20.848,20.606 12.815,20.748 12.656 C 21.074 12.289,21.074 11.710,20.748 11.345 C 20.607 11.188,7.572 3.150,7.305 3.055 C 7.107 2.985,6.867 2.990,6.643 3.069 "
+                    stroke="none"
+                    fillRule="evenodd"
+                  ></path>
+                </svg>
               </svg>
-            </svg>
-          </Link>
+            </Link>
+          </motion.span>
           <span className="text-white font-bold text-lg xl:text-xl">Play</span>
           <div>
-            <button className="rounded-full text-white active:bg-white active:text-black p-4">
+            <motion.button
+              whileHover={scaleUp}
+              whileTap={scaleDown}
+              className="rounded-full text-white active:bg-white active:text-black p-4"
+            >
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
                 viewBox="0 0 24 24"
@@ -151,8 +161,12 @@ export const CarouselItem = ({
                   ></path>
                 </svg>
               </svg>
-            </button>
-            <button className="rounded-full text-white active:bg-white active:text-black p-4">
+            </motion.button>
+            <motion.button
+              whileHover={scaleUp}
+              whileTap={scaleDown}
+              className="rounded-full text-white active:bg-white active:text-black p-4"
+            >
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
                 viewBox="0 0 24 24"
@@ -166,7 +180,7 @@ export const CarouselItem = ({
                   fillRule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </motion.button>
           </div>
         </div>
       </motion.section>
