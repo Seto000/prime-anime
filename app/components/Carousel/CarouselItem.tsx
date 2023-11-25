@@ -16,8 +16,8 @@ export const CarouselItem = ({
 }: CarouselItemType) => {
   const [_, animate] = useAnimate();
 
-  const scaleUp = { scale: 1.1 };
-  const scaleDown = { scale: 0.9 };
+  const scaleUp = { scale: 1.1, transition: { type: "spring", duration: 0.6 } };
+  const scaleDown = { scale: 0.9, transition: { type: "spring", duration: 0.6 } };
 
   useEffect(() => {
     const elem1 = document.querySelector(
@@ -112,7 +112,7 @@ export const CarouselItem = ({
           <motion.span
             whileHover={scaleUp}
             whileTap={scaleDown}
-            className="flex rounded-full bg-white group"
+            className="flex rounded-full bg-white group "
           >
             <Link href="/" className="p-4">
               <svg
@@ -123,7 +123,7 @@ export const CarouselItem = ({
               >
                 <title>Play</title>
                 <svg
-                  className="h-10 w-10 xl:h-12 xl:w-12 fill-black group-hover:fill-[#4d4d4d]"
+                  className="h-10 w-10 xl:h-12 xl:w-12 fill-black group-hover:fill-[#4d4d4d] transition-colors duration-300"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -141,7 +141,7 @@ export const CarouselItem = ({
             <motion.button
               whileHover={scaleUp}
               whileTap={scaleDown}
-              className="rounded-full text-white active:bg-white active:text-black p-4"
+              className="rounded-full text-white active:bg-white hover:bg-white active:text-black hover:text-black p-4 mButton mr-2 transition-colors duration-300"
             >
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
@@ -167,7 +167,7 @@ export const CarouselItem = ({
             <motion.button
               whileHover={scaleUp}
               whileTap={scaleDown}
-              className="rounded-full text-white active:bg-white active:text-black p-4"
+              className="rounded-full text-white active:bg-white hover:bg-white active:text-black hover:text-black p-4 mButton transition-colors duration-300"
             >
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"

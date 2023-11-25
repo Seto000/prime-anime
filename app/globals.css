@@ -34,3 +34,9 @@
 .swiper-pagination-horizontal {
   position: initial !important;
 }
+
+@media (pointer: fine) {
+  .mButton {
+    background-color: hsla(0, 0%, 100%, 0.2);
+  }
+}
