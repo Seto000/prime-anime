@@ -63,7 +63,7 @@ export const CarouselItem = ({
               width={1097}
               height={140}
               src={titleImg}
-              sizes="(min-width: 1540px) calc(31.23vw - 47px), (min-width: 1040px) 31.46vw, (min-width: 440px) calc(59.83vw - 23px), 50vw"
+              sizes="(min-width: 1540px) calc(31.23vw - 47px), (min-width: 1280px) calc(33.75vw - 44px), (min-width: 1040px) calc(25.45vw - 26px), (min-width: 420px) calc(57.33vw - 13px), calc(48vw + 12px)"
               alt="Change this later"
               quality={100}
               priority
@@ -103,6 +103,8 @@ export const CarouselItem = ({
               height={64}
               src={mRating}
               alt="Maturity Rating"
+              quality={100}
+              priority
             />
           </span>
         </div>
