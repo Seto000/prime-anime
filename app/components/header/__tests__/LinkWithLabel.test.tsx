@@ -15,7 +15,7 @@ describe("LinkWithLabel", () => {
     expect(elem).toBeInTheDocument();
   });
 
-  it("shoudl have correct text", () => {
+  it("should have correct text", () => {
     render(
       <LinkWithLabel text="Test" href="/">
         Test

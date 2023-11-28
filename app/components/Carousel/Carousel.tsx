@@ -19,7 +19,6 @@ export const Carousel = () => {
       mousewheel={true}
       keyboard={true}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-      watchSlidesProgress
     >
       <SwiperSlide>
         <CarouselItem

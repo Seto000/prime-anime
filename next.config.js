@@ -9,6 +9,7 @@ const nextConfig = {
       },
     ],
   },
+  transpilePackages: ["swiper"],
 };
 
 module.exports = nextConfig;

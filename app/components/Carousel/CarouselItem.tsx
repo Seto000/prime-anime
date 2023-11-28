@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimate } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+
+import useSwiperNavAnimation from "@/app/hooks/useSwiperNavAnimation";
 
 type CarouselItemType = {
   heroImg: string;
@@ -14,23 +15,13 @@ export const CarouselItem = ({
   titleImg,
   mRating,
 }: CarouselItemType) => {
-  const [_, animate] = useAnimate();
+  useSwiperNavAnimation(0);
 
   const scaleUp = { scale: 1.1, transition: { type: "spring", duration: 0.6 } };
-  const scaleDown = { scale: 0.9, transition: { type: "spring", duration: 0.6 } };
-
-  useEffect(() => {
-    const elem1 = document.querySelector(
-      ".swiper-button-prev"
-    ) as HTMLDivElement;
-    const elem2 = document.querySelector(
-      ".swiper-button-next"
-    ) as HTMLDivElement;
-    elem1.onmouseenter = () => animate(elem1, { scale: 1.5 });
-    elem1.onmouseleave = () => animate(elem1, { scale: 1 });
-    elem2.onmouseenter = () => animate(elem2, { scale: 1.5 });
-    elem2.onmouseleave = () => animate(elem2, { scale: 1 });
-  }, [animate]);
+  const scaleDown = {
+    scale: 0.9,
+    transition: { type: "spring", duration: 0.6 },
+  };
 
   return (
     <motion.div className="mx-auto aspect-video lg:aspect-[3/1] max-w-[92%] relative">
