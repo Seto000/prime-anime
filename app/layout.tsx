@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${pt_sans.className} antialiased bg-bgBlue1 h-screen`}>
+      <body className={`${pt_sans.className} antialiased bg-bgBlue1 h-auto`}>
         <Header>
           <HeaderChildren />
         </Header>

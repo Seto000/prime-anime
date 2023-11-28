@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import { Navigation, Pagination, Keyboard } from "swiper/modules";
 
 import { CarouselItem } from "./CarouselItem";
 
@@ -16,9 +16,8 @@ export const Carousel = () => {
       pagination={{
         clickable: true,
       }}
-      mousewheel={true}
       keyboard={true}
-      modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+      modules={[Navigation, Pagination, Keyboard]}
     >
       <SwiperSlide>
         <CarouselItem
