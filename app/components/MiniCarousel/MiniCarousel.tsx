@@ -11,6 +11,7 @@ import useSwiperNavAnimation from "@/app/hooks/useSwiperNavAnimation";
 type Breakpoints = Record<number, { slidesPerView: number }>;
 
 type MiniCarouselType = {
+  navAnimation: number;
   sectionTitle: string;
   aspectRatio: string;
   swiperConfig: {
@@ -20,11 +21,12 @@ type MiniCarouselType = {
 };
 
 export const MiniCarousel = ({
+  navAnimation,
   sectionTitle,
   aspectRatio,
   swiperConfig,
 }: MiniCarouselType) => {
-  useSwiperNavAnimation(1);
+  useSwiperNavAnimation(navAnimation);
 
   return (
     <section className="">

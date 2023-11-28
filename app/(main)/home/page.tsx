@@ -4,12 +4,13 @@ import { MiniCarousel } from "@/app/components/MiniCarousel/MiniCarousel";
 export default function Home() {
   return (
     <>
-      <div className="mb-6 lg:mb-9 xl:mb-12" id="gay">
+      <div className="mb-6 lg:mb-9 xl:mb-12" id="swiperParent">
         <Carousel />
       </div>
-      <div className="mb-6 lg:mb-9 xl:mb-12">
+      <div className="mb-6 lg:mb-9 xl:mb-12" id="swiperParent">
         <MiniCarousel
-          sectionTitle=" Continue watching"
+          navAnimation={1}
+          sectionTitle="Continue watching"
           aspectRatio="aspect-video"
           swiperConfig={{
             slidesPerView: 1.65,
@@ -22,8 +23,9 @@ export default function Home() {
           }}
         />
       </div>
-      <div className="mb-6 lg:mb-9 xl:mb-12">
+      <div className="mb-6 lg:mb-9 xl:mb-12" id="swiperParent">
         <MiniCarousel
+          navAnimation={2}
           sectionTitle="Originals and Exclusives"
           aspectRatio="aspect-[2/3]"
           swiperConfig={{

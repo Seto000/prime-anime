@@ -20,6 +20,7 @@
 .swiper-button-next {
   top: var(--swiper-navigation-top-offset, 48%) !important;
   color: white !important;
+  opacity: 0;
 }
 
 .swiper-button-prev:after,
@@ -29,6 +30,10 @@
 
 .swiper-button-disabled {
   visibility: hidden;
+}
+
+#swiperParent:hover .swiper-button-next, #swiperParent:hover .swiper-button-prev{
+  opacity: 1;
 }
 
 .swiper-pagination-bullet {
