@@ -16,6 +16,10 @@
   width: 0px;
 }
 
+.swiper-slide {
+  width: auto !important;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   top: var(--swiper-navigation-top-offset, 48%) !important;
@@ -32,7 +36,8 @@
   visibility: hidden;
 }
 
-#swiperParent:hover .swiper-button-next, #swiperParent:hover .swiper-button-prev{
+#swiperParent:hover .swiper-button-next,
+#swiperParent:hover .swiper-button-prev {
   opacity: 1;
 }
 

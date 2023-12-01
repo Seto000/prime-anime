@@ -24,7 +24,7 @@ export const CarouselItem = ({
   };
 
   return (
-    <motion.div className="mx-auto aspect-video lg:aspect-[3/1] max-w-[92%] relative">
+    <motion.div className="mx-auto aspect-video lg:aspect-[3/1] w-screen max-w-[92%] relative">
       <Image
         fill
         src={heroImg}
@@ -158,7 +158,7 @@ export const CarouselItem = ({
             <motion.button
               whileHover={scaleUp}
               whileTap={scaleDown}
-              className="rounded-full text-white active:bg-white  active:text-black  p-4 mButton transition-colors duration-300"
+              className="rounded-full text-white active:bg-white  active:text-black p-4 mButton transition-colors duration-300"
             >
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"

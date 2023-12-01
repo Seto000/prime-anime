@@ -33,12 +33,6 @@ export const Carousel = () => {
           mRating="https://m.media-amazon.com/images/G/01/vcc/maturity-ratings-logos/png/adjctq/a18._SY64_FMpng_.png"
         />
       </SwiperSlide>
-      <SwiperSlide>
-        <div className="bg-red-600 mx-auto rounded-lg aspect-video lg:aspect-[3/1] max-w-[92%]"></div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="bg-red-600 mx-auto rounded-lg aspect-video lg:aspect-[3/1] max-w-[92%]"></div>
-      </SwiperSlide>
     </Swiper>
   );
 };

@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "framer-motion": "^10.16.5",
+    "i": "^0.3.7",
     "next": "14.0.3",
+    "npm": "^10.2.4",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.32.6",
