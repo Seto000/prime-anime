@@ -60,6 +60,7 @@ const MiniCarousel = ({
         {sectionTitle}
       </h2>
       <Swiper
+        loop
         speed={800}
         navigation={true}
         keyboard={true}
@@ -68,22 +69,25 @@ const MiniCarousel = ({
         spaceBetween={15}
         className="!px-3.5 md:!px-7 lg:!px-10 xl:!px-16 2xl:!px-20"
         watchSlidesProgress
-        slideToClickedSlide
       >
         {slidesArray.map((slide, index) => (
           <SwiperSlide key={index}>
             {animate ? (
               <motion.div
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={() => handleMouseLeave(index)}
-                className={`bg-cyan-600 rounded-lg ${
-                  showVideoIndex === index ? "aspect-video" : widthControl
-                } md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
-                style={
+                animate={
                   showVideoIndex === index
-                    ? { width: `calc(${carouselHeight}px*1.77778)` }
+                    ? {
+                        width: `calc(${carouselHeight}px*1.77778)`,
+                        aspectRatio: 16 / 9,
+                      }
                     : {}
                 }
+                style={{
+                  aspectRatio: 2 / 3,
+                }}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={() => handleMouseLeave(index)}
+                className={`bg-cyan-600 rounded-lg ${widthControl} md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
               />
             ) : (
               <div
