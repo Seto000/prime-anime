@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Keyboard } from "swiper/modules";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import useSwiperNavAnimation from "@/app/hooks/useSwiperNavAnimation";
 
@@ -23,8 +23,9 @@ const MiniCarousel = ({
   widthControl,
   animate,
 }: MiniCarouselType) => {
+  const swiperRef = useRef() as any;
   const [showVideoIndex, setShowVideoIndex] = useState<number | null>(null);
-  const [carouselHeight, setCarouselHeight] = useState(0);
+  const [widthToAnimate, setWidthToAnimate] = useState(0);
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useSwiperNavAnimation(navAnimation);
@@ -34,12 +35,13 @@ const MiniCarousel = ({
       ".swiper-wrapper"
     ) as NodeListOf<HTMLDivElement>;
     const height = slide[2].offsetHeight;
-    setCarouselHeight(height);
+    setWidthToAnimate(height * 1.77778);
   }, []);
 
   const handleMouseLeave = (index: number) => {
     const timeout = setTimeout(() => {
       setShowVideoIndex(null);
+      // swiperRef.current.swiper.slideTo(index - 5);
     }, 300);
     setLeaveTimeout(timeout);
   };
@@ -50,25 +52,28 @@ const MiniCarousel = ({
       setLeaveTimeout(null);
     }
     setShowVideoIndex(index);
+    // swiperRef.current?.swiper.slideTo(index - 3);
   };
 
   const slidesArray = new Array(12).fill(null);
 
   return (
-    <section>
-      <h2 className="text-white font-bold ml-3.5 md:ml-7 lg:ml-10 xl:ml-16 2xl:ml-20 pb-2 md:text-lg xl:text-xl">
+    <>
+      <h2 className="text-white font-bold ml-3.5 md:ml-7 lg:ml-10 xl:ml-16 2xl:ml-20 pb-2 lg:pb-3 xl:pb-4 md:text-lg xl:text-xl">
         {sectionTitle}
       </h2>
       <Swiper
-        loop
+        ref={swiperRef}
         speed={800}
         navigation={true}
         keyboard={true}
         modules={[Navigation, Keyboard]}
         slidesPerView={"auto"}
         spaceBetween={15}
-        className="!px-3.5 md:!px-7 lg:!px-10 xl:!px-16 2xl:!px-20"
-        watchSlidesProgress
+        className={`!px-3.5 md:!px-7 lg:!px-10 xl:!px-16 2xl:!px-20 !overflow-visible ${
+          animate ? "!z-10" : "!z-20"
+        }`}
+        loop
       >
         {slidesArray.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -77,7 +82,7 @@ const MiniCarousel = ({
                 animate={
                   showVideoIndex === index
                     ? {
-                        width: `calc(${carouselHeight}px*1.77778)`,
+                        width: widthToAnimate,
                         aspectRatio: 16 / 9,
                       }
                     : {}
@@ -87,17 +92,39 @@ const MiniCarousel = ({
                 }}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
-                className={`bg-cyan-600 rounded-lg ${widthControl} md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
+                className={`bg-sky-600 rounded-lg ${widthControl} md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
               />
             ) : (
-              <div
-                className={`bg-red-600 rounded-lg ${widthControl} md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
-              />
+              <motion.div
+                variants={{ hover: { scale: 1.25 } }}
+                whileHover="hover"
+              >
+                <motion.div
+                  variants={{
+                    hover: {
+                      borderBottomLeftRadius: 0,
+                      borderBottomRightRadius: 0,
+                    },
+                  }}
+                  className={`bg-red-600 rounded-lg ${widthControl} md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
+                />
+                <motion.div
+                  style={{ opacity: 0, pointerEvents: "none" }}
+                  variants={{
+                    hover: {
+                      opacity: 1,
+                      borderBottomLeftRadius: 8,
+                      borderBottomRightRadius: 8,
+                    },
+                  }}
+                  className="bg-white absolute h-full w-full"
+                ></motion.div>
+              </motion.div>
             )}
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </>
   );
 };
 

@@ -58,3 +58,17 @@
     color: black;
   }
 }
+
+.media-scroller {
+  overscroll-behavior-inline: contain;
+}
+
+/* 
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 1rem;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+} */
