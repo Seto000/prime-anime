@@ -1,9 +1,22 @@
 import { render, screen } from "@testing-library/react";
-
 import { CarouselItem } from "../CarouselItem";
 import "@/__mocks__/intersectionObserverMock";
 
 describe("CarouselItem", () => {
+  beforeEach(() => {
+    const div1 = document.createElement("div");
+    div1.className = "swiper-button-prev";
+    document.body.appendChild(div1);
+
+    const div2 = document.createElement("div");
+    div2.className = "swiper-button-next";
+    document.body.appendChild(div2);
+  });
+
+  afterEach(() => {
+    document.body.innerHTML = "";
+  });
+
   it("should render heroImg correctly", () => {
     render(
       <CarouselItem
