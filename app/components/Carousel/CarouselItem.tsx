@@ -3,6 +3,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import useSwiperNavAnimation from "@/app/hooks/useSwiperNavAnimation";
+import { scaleUp, scaleDown } from "@/app/utils/animations";
+import { AnimatedButton } from "../UI/AnimatedButton";
 
 type CarouselItemType = {
   heroImg: string;
@@ -16,12 +18,6 @@ export const CarouselItem = ({
   mRating,
 }: CarouselItemType) => {
   useSwiperNavAnimation(0);
-
-  const scaleUp = { scale: 1.1, transition: { type: "spring", duration: 0.6 } };
-  const scaleDown = {
-    scale: 0.9,
-    transition: { type: "spring", duration: 0.6 },
-  };
 
   return (
     <motion.div className="mx-auto aspect-video lg:aspect-[3/1] w-screen max-w-[92%] relative">
@@ -129,11 +125,7 @@ export const CarouselItem = ({
           </motion.span>
           <span className="text-white font-bold text-lg xl:text-xl">Play</span>
           <div>
-            <motion.button
-              whileHover={scaleUp}
-              whileTap={scaleDown}
-              className="rounded-full text-white active:bg-white active:text-black p-4 mButton mr-2 transition-colors duration-300"
-            >
+            <AnimatedButton>
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
                 viewBox="0 0 24 24"
@@ -154,12 +146,8 @@ export const CarouselItem = ({
                   ></path>
                 </svg>
               </svg>
-            </motion.button>
-            <motion.button
-              whileHover={scaleUp}
-              whileTap={scaleDown}
-              className="rounded-full text-white active:bg-white  active:text-black p-4 mButton transition-colors duration-300"
-            >
+            </AnimatedButton>
+            <AnimatedButton>
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
                 viewBox="0 0 24 24"
@@ -173,7 +161,7 @@ export const CarouselItem = ({
                   fillRule="evenodd"
                 ></path>
               </svg>
-            </motion.button>
+            </AnimatedButton>
           </div>
         </div>
       </motion.section>
