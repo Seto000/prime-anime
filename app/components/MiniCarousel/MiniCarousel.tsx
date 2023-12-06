@@ -117,7 +117,7 @@ const MiniCarousel = ({
                       borderBottomRightRadius: 8,
                     },
                   }}
-                  className="bg-white absolute h-full w-full"
+                  className="bg-black absolute h-full w-full"
                 ></motion.div>
               </motion.div>
             )}
