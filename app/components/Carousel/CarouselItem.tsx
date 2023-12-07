@@ -76,10 +76,14 @@ export const CarouselItem = ({
           </span>
         </div>
         <div className="hidden lg:flex lg:gap-4 xl:gap-6 lg:items-center">
-          <PlayButton href="/" />
+          <PlayButton
+            href="/"
+            sizes="h-10 w-10 xl:h-12 xl:w-12"
+            padding="p-4"
+          />
           <span className="text-white font-bold text-lg xl:text-xl">Play</span>
           <div>
-            <AnimatedButton>
+            <AnimatedButton padding="p-4">
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
                 viewBox="0 0 24 24"
@@ -101,7 +105,7 @@ export const CarouselItem = ({
                 </svg>
               </svg>
             </AnimatedButton>
-            <AnimatedButton>
+            <AnimatedButton padding="p-4">
               <svg
                 className="h-7 w-7 xl:h-8 xl:w-8"
                 viewBox="0 0 24 24"

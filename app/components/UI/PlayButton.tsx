@@ -5,25 +5,27 @@ import { scaleUp, scaleDown } from "@/app/utils/animations";
 
 type PlayButtonType = {
   href: string;
+  sizes: string;
+  padding: string;
 };
 
-export const PlayButton = ({ href }: PlayButtonType) => {
+export const PlayButton = ({ href, sizes, padding }: PlayButtonType) => {
   return (
     <motion.span
       whileHover={scaleUp}
       whileTap={scaleDown}
       className="flex rounded-full bg-white group "
     >
-      <Link href={href} className="p-4">
+      <Link href={href} className={padding}>
         <svg
-          className="h-10 w-10 xl:h-12 xl:w-12"
+          className={sizes}
           viewBox="0 0 24 24"
           role="img"
           aria-hidden="true"
         >
           <title>Play</title>
           <svg
-            className="h-10 w-10 xl:h-12 xl:w-12 fill-black group-hover:fill-[#4d4d4d] transition-colors duration-300"
+            className={`${sizes} fill-black group-hover:fill-[#4d4d4d] transition-colors duration-300`}
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
