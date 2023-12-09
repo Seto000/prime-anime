@@ -10,7 +10,7 @@ export default function Home() {
       <section className="mb-6 lg:mb-9 xl:mb-12" id="swiperParent">
         <Carousel />
       </section>
-      <section className="overflow-x-auto py-56 -my-56" id="swiperParent">
+      <section className="overflow-x-auto py-96 -my-96" id="swiperParent">
         <MiniCarousel
           navAnimation={1}
           sectionTitle="Continue watching"

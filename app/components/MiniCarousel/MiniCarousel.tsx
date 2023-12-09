@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { Navigation, Keyboard } from "swiper/modules";
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { PiPlus } from "react-icons/pi";
 import { IoMdMore } from "react-icons/io";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -123,7 +124,7 @@ const MiniCarousel = ({
                       pointerEvents: "all",
                     },
                   }}
-                  className="bg-black text-white font-bold text-sm px-4 pb-4 pt-3 absolute h-full w-full"
+                  className="bg-black text-white font-bold text-sm px-4 pb-4 pt-3 absolute h-fit w-full"
                 >
                   <div className="flex items-center">
                     <IoIosCheckmarkCircle className="h-4 w-4 md:h-5 md:w-5 text-[#1a98ff]" />
@@ -147,6 +148,23 @@ const MiniCarousel = ({
                       </AnimatedButton>
                     </div>
                   </div>
+                  <h4 className="mt-2 text-base">Title</h4>
+                  <div className="flex items-center gap-3 mt-3 text-muted">
+                    <span >2023</span>
+                    <span>1 h 38 min</span>
+                    <span>
+                      <Image
+                        className="h-5 w-5 md:h-6 md:w-6"
+                        width={64}
+                        height={64}
+                        src="https://m.media-amazon.com/images/G/01/vcc/maturity-ratings-logos/png/djctq/12._SY64_FMpng_.png"
+                        alt="Maturity Rating"
+                        quality={100}
+                        priority
+                      />
+                    </span>
+                  </div>
+                  <div className="mt-2 text-muted text-base">Description...</div>
                 </motion.div>
               </motion.div>
             )}
