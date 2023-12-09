@@ -78,8 +78,8 @@ export const CarouselItem = ({
         <div className="hidden lg:flex lg:gap-4 xl:gap-6 lg:items-center">
           <PlayButton
             href="/"
-            sizes="h-10 w-10 xl:h-12 xl:w-12"
-            padding="p-4"
+            iconStyles="h-10 w-10 xl:h-12 xl:w-12"
+            linkStyles="p-4"
           />
           <span className="text-white font-bold text-lg xl:text-xl">Play</span>
           <div>
