@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { IoChevronDown } from "react-icons/io5";
 
 type ButtonWDropType = {
   text: string;
@@ -19,20 +20,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
       }`}
     >
       {text}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2.5}
-        stroke="currentColor"
-        className="w-3 h-3 transform translate-y-0.5"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-        />
-      </svg>
+      <IoChevronDown className="w-3 h-3 xl:w-5 xl:h-5 transform translate-y-0.5" />
     </button>
   );
 };
