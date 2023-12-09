@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { PiPlus } from "react-icons/pi";
 import { IoMdMore } from "react-icons/io";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 import useSwiperNavAnimation from "@/app/hooks/useSwiperNavAnimation";
-import { CheckMarkSVG } from "../UI/CheckMarkSVG";
 import { PlayButton } from "../UI/PlayButton";
 import { AnimatedButton } from "../UI/AnimatedButton";
 
@@ -126,7 +126,7 @@ const MiniCarousel = ({
                   className="bg-black text-white font-bold text-sm px-4 pb-4 pt-3 absolute h-full w-full"
                 >
                   <div className="flex items-center">
-                    <CheckMarkSVG />
+                    <IoIosCheckmarkCircle className="h-4 w-4 md:h-5 md:w-5 text-[#1a98ff]" />
                     <span>Included with Prime</span>
                   </div>
                   <div className="flex items-center mt-3">

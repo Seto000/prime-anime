@@ -3,11 +3,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { PiPlus } from "react-icons/pi";
 import { LuInfo } from "react-icons/lu";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 import useSwiperNavAnimation from "@/app/hooks/useSwiperNavAnimation";
 import { AnimatedButton } from "../UI/AnimatedButton";
 import { PlayButton } from "../UI/PlayButton";
-import { CheckMarkSVG } from "../UI/CheckMarkSVG";
 
 type CarouselItemType = {
   heroImg: string;
@@ -62,7 +62,7 @@ export const CarouselItem = ({
         </h2>
         <div className="flex lg:gap-2 text-white font-bold text-sm md:text-base xl:text-lg mt-4 lg:mt-12 xl:mt-16">
           <div className="mb-2 lg:mb-3 flex items-center">
-            <CheckMarkSVG />
+            <IoIosCheckmarkCircle className="h-4 w-4 md:h-5 md:w-5 xl:h-6 xl:w-6 mr-1 text-[#1a98ff]" />
             <span>Included with Prime</span>
           </div>
           <span className="ml-auto lg:ml-0">
