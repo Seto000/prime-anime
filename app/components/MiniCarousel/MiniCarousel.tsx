@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import { Navigation, Keyboard } from "swiper/modules";
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import { GoPlus } from "react-icons/go";
+import { PiPlus } from "react-icons/pi";
 import { IoMdMore } from "react-icons/io";
 
 import useSwiperNavAnimation from "@/app/hooks/useSwiperNavAnimation";
@@ -140,10 +140,10 @@ const MiniCarousel = ({
                     </span>
                     <div className="ml-auto">
                       <AnimatedButton padding="p-2">
-                        <GoPlus className="h-3 w-3 xl:h-6 xl:w-6" />
+                        <PiPlus className="h-2 w-2 xl:h-5 xl:w-5" />
                       </AnimatedButton>
                       <AnimatedButton padding="p-2">
-                        <IoMdMore className="h-3 w-3 xl:h-6 xl:w-6" />
+                        <IoMdMore className="h-2 w-2 xl:h-5 xl:w-5" />
                       </AnimatedButton>
                     </div>
                   </div>
