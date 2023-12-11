@@ -22,7 +22,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
         },
       }}
       whileHover="hover"
-      className={`flex items-center gap-1 px-3 h-full md:text-lg ${btnStyles} ${
+      className={`flex items-center gap-1 lg:px-3 xl:px-4 h-full md:text-lg ${btnStyles} ${
         currentPath === `/${text.toLowerCase()}`
           ? "text-inherit border-b-[3px] border-white"
           : "text-muted"
