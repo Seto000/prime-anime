@@ -15,7 +15,11 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
   return (
     <motion.button
       variants={{
-        hover: { backgroundColor: "#191e25" },
+        hover: {
+          backgroundColor: "#191e25",
+          color: "white",
+          transition: { duration: 0 },
+        },
       }}
       whileHover="hover"
       className={`flex items-center gap-1 px-3 h-full md:text-lg ${btnStyles} ${
