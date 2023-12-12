@@ -25,7 +25,9 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
         },
       }}
       whileHover="hover"
-      className={`flex relative h-full md:text-lg ${btnStyles}`}
+      className={`flex relative h-full md:text-lg ${btnStyles} ${
+        isOpen && "!bg-[#191e25]"
+      }`}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
