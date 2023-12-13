@@ -14,9 +14,9 @@ export const BigCard = ({ index }: BigCardType) => {
     const slide = document.querySelectorAll(
       ".swiper-wrapper"
     ) as NodeListOf<HTMLDivElement>;
-    const height = slide[2].offsetHeight;
+    const height = slide[2]?.offsetHeight;
     setWidthToAnimate(height * 1.77778);
-  }, []);
+  }, [index]);
 
   const handleMouseLeave = (index: number) => {
     const timeout = setTimeout(() => {
@@ -49,6 +49,7 @@ export const BigCard = ({ index }: BigCardType) => {
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={() => handleMouseLeave(index)}
       className={`bg-sky-600 rounded-lg w-[42vw] aspect-[2/3] md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
+      data-testid="big-card"
     />
   );
 };

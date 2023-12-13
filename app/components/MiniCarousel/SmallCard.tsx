@@ -9,7 +9,11 @@ import { AnimatedButton } from "../UI/AnimatedButton";
 
 export const SmallCard = () => {
   return (
-    <motion.div variants={{ hover: { scale: 1.25 } }} whileHover="hover">
+    <motion.div
+      variants={{ hover: { scale: 1.25 } }}
+      whileHover="hover"
+      data-testid="small-card"
+    >
       <motion.div
         variants={{
           hover: {
