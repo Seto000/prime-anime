@@ -14,7 +14,6 @@ export default function Home() {
         <MiniCarousel
           navAnimation={1}
           sectionTitle="Continue watching"
-          widthControl="w-[55vw] aspect-video"
           animate={false}
         />
       </section>
@@ -25,7 +24,6 @@ export default function Home() {
         <MiniCarousel
           navAnimation={2}
           sectionTitle="Originals and Exclusives"
-          widthControl="w-[42vw] aspect-[2/3]"
           animate={true}
         />
       </section>
