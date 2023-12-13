@@ -6,8 +6,8 @@ import { scaleUp, scaleDown } from "@/app/utils/animations";
 
 type PlayButtonType = {
   href: string;
-  iconStyles: string;
-  linkStyles: string;
+  iconStyles?: string;
+  linkStyles?: string;
 };
 
 export const PlayButton = ({ href, iconStyles, linkStyles }: PlayButtonType) => {

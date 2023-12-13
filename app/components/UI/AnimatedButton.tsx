@@ -4,7 +4,7 @@ import { scaleUp, scaleDown } from "@/app/utils/animations";
 
 type AnimatedButtonType = {
   children: React.ReactNode;
-  padding: string;
+  padding?: string;
 };
 
 export const AnimatedButton = ({ children, padding }: AnimatedButtonType) => {
