@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 type BigCardType = {
@@ -7,16 +7,10 @@ type BigCardType = {
 
 export const BigCard = ({ index }: BigCardType) => {
   const [showVideoIndex, setShowVideoIndex] = useState<number | null>(null);
-  const [widthToAnimate, setWidthToAnimate] = useState(0);
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [width, setWidth] = useState<number>();
 
-  useEffect(() => {
-    const slide = document.querySelectorAll(
-      ".swiper-wrapper"
-    ) as NodeListOf<HTMLDivElement>;
-    const height = slide[2]?.offsetHeight;
-    setWidthToAnimate(height * 1.77778);
-  }, [index]);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseLeave = (index: number) => {
     const timeout = setTimeout(() => {
@@ -30,25 +24,33 @@ export const BigCard = ({ index }: BigCardType) => {
       clearTimeout(leaveTimeout);
       setLeaveTimeout(null);
     }
+
+    const height = cardRef.current?.offsetHeight;
+    if (height) {
+      setWidth(height * 1.77778);
+    }
+
     setShowVideoIndex(index);
   };
 
   return (
     <motion.div
+      ref={cardRef}
       animate={
         showVideoIndex === index
           ? {
-              width: widthToAnimate,
+              width: width,
               aspectRatio: 16 / 9,
             }
           : {}
       }
       style={{
+        width: "var(--width-to)",
         aspectRatio: 2 / 3,
       }}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={() => handleMouseLeave(index)}
-      className={`bg-sky-600 rounded-lg w-[42vw] aspect-[2/3] md:w-[29vw] lg:w-[22vw] xl:w-[17.6vw] 2xl:w-[14.9vw]`}
+      className={`bg-sky-600 rounded-lg [--width-to:42vw] md:[--width-to:29vw] lg:[--width-to:22vw] xl:[--width-to:17.6vw] 2xl:[--width-to:14.9vw]`}
       data-testid="big-card"
     />
   );
