@@ -32,7 +32,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
-        className={`flex items-center gap-1 lg:px-3 xl:px-4 hover:text-white ${
+        className={`flex items-center gap-1 px-3 xl:px-4 hover:text-white ${
           currentPath === `/${text.toLowerCase()}`
             ? "text-inherit border-b-[3px] border-white"
             : "text-muted"
@@ -51,7 +51,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
         </motion.div>
       </button>
       <div
-        className={`flex-col bg-[#191e25] rounded-b-lg h-fit min-w-full top-full text-muted absolute shadow-custom ${
+        className={`flex-col bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen lg:w-full top-full text-muted absolute lg:shadow-custom ${
           isOpen ? "flex" : "hidden"
         }`}
       >
