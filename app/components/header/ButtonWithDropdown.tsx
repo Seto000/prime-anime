@@ -30,6 +30,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
       }`}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
+      onTouchEnd={() => setIsOpen((prev) => !prev)}
     >
       <button
         className={`flex items-center gap-1 px-3 xl:px-4 hover:text-white ${
@@ -46,6 +47,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
               transition: { type: "spring", duration: 0.3 },
             },
           }}
+          animate={{ rotate: isOpen ? 180 : 0 }}
         >
           <IoChevronDown className="w-3 h-3 xl:w-5 xl:h-5 transform translate-y-0.5" />
         </motion.div>
@@ -57,25 +59,25 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
       >
         <Link
           href="/"
-          className="p-3 hover:bg-white hover:text-black whitespace-nowrap"
+          className="p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
         >
           All
         </Link>
         <Link
           href="/"
-          className="p-3 hover:bg-white hover:text-black whitespace-nowrap"
+          className="p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
         >
           Movies
         </Link>
         <Link
           href="/"
-          className="p-3 hover:bg-white hover:text-black whitespace-nowrap"
+          className="p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
         >
           TV shows
         </Link>
         <Link
           href="/"
-          className="p-3 hover:bg-white hover:text-black whitespace-nowrap rounded-b-lg"
+          className="p-3 hover:bg-white hover:text-black whitespace-nowrap rounded-b-lg hidden lg:inline"
         >
           Sports
         </Link>
