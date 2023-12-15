@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import { IoChevronDown } from "react-icons/io5";
 import Link from "next/link";
 import { useState } from "react";
+import { GrHomeRounded } from "react-icons/gr";
+import { IoBagOutline } from "react-icons/io5";
+import { MdLiveTv } from "react-icons/md";
+import { PiSquaresFour } from "react-icons/pi";
+import { BsCollectionPlay } from "react-icons/bs";
 
 type ButtonWDropType = {
   text: string;
@@ -20,7 +25,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
       variants={{
         hover: {
           backgroundColor: "#191e25",
-          color: "white",
+          color: "#ffff",
           transition: { duration: 0 },
         },
       }}
@@ -57,6 +62,38 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
           isOpen ? "flex" : "hidden"
         }`}
       >
+        <Link
+          href="/"
+          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
+        >
+          <GrHomeRounded className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          Home
+        </Link>
+        <Link
+          href="/"
+          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
+        >
+          <IoBagOutline className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          Store
+        </Link>
+        <Link
+          href="/"
+          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
+        >
+          <MdLiveTv className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          Live TV
+        </Link>
+        <button className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]">
+          <PiSquaresFour className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          Categories
+        </button>
+        <Link
+          href="/"
+          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
+        >
+          <BsCollectionPlay className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          My Stuff
+        </Link>
         <Link
           href="/"
           className="p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
