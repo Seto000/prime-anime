@@ -43,9 +43,9 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
       }`}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
-      onTouchEnd={() => setIsOpen((prev) => !prev)}
     >
       <button
+        onTouchEnd={() => setIsOpen((prev) => !prev)}
         className={`flex items-center gap-1 px-3 xl:px-4 hover:text-white ${
           currentPath === `/${text.toLowerCase()}`
             ? "text-inherit border-b-[3px] border-white"
