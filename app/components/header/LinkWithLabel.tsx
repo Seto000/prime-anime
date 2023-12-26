@@ -21,7 +21,7 @@ export const LinkWithLabel = ({
   return (
     <Link
       href={href}
-      className={`h-full flex items-center px-4 md:text-lg hover:bg-[#191e25] hover:text-white ${
+      className={`h-full flex items-center px-4 md:text-lg lg:hover:bg-[#191e25] lg:hover:text-white ${
         currentPath === `/${text}` ? "text-inherit" : "text-muted"
       } ${linkStyles}`}
     >

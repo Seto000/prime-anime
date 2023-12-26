@@ -10,7 +10,7 @@ import { AnimatedButton } from "../UI/AnimatedButton";
 export const SmallCard = () => {
   return (
     <motion.div
-      variants={{ hover: { scale: 1.25 } }}
+      variants={{ hover: { scale: 1.25} }}
       whileHover="hover"
       data-testid="small-card"
     >
@@ -33,30 +33,30 @@ export const SmallCard = () => {
             pointerEvents: "all",
           },
         }}
-        className="bg-black text-white font-bold text-sm px-4 pb-4 pt-3 absolute h-fit w-full"
+        className="bg-black text-white font-bold text-xs md:text-sm px-2 pb-2 md:px-4 md:pb-4 pt-1.5 md:pt-3 absolute h-fit w-full"
       >
         <div className="flex items-center">
           <IoIosCheckmarkCircle className="h-4 w-4 md:h-5 md:w-5 text-[#1a98ff]" />
           <span>Included with Prime</span>
         </div>
-        <div className="flex items-center mt-3">
+        <div className="flex items-center mt-1 md:mt-3">
           <PlayButton
             href="/"
-            iconStyles="h-6 w-6 xl:h-6 xl:w-6"
-            linkStyles="p-3"
+            iconStyles="h-5 w-5 md:h-6 md:w-6"
+            linkStyles="p-1.5 md:p-3"
           />
-          <span className="text-white font-bold text-base ml-3">Resume</span>
+          <span className="text-white font-bold text-sm md:text-base ml-2">Resume</span>
           <div className="ml-auto">
             <AnimatedButton padding="p-2">
-              <PiPlus className="h-2 w-2 xl:h-5 xl:w-5" />
+              <PiPlus className=" xl:h-5 xl:w-5" />
             </AnimatedButton>
             <AnimatedButton padding="p-2">
-              <IoMdMore className="h-2 w-2 xl:h-5 xl:w-5" />
+              <IoMdMore className=" xl:h-5 xl:w-5" />
             </AnimatedButton>
           </div>
         </div>
-        <h4 className="mt-2 text-base">Title</h4>
-        <div className="flex items-center gap-3 mt-3 text-muted">
+        <h4 className="mt-1 md:mt-2 text-base">Title</h4>
+        <div className="flex items-center gap-3 mt-1 md:mt-3 text-muted">
           <span>2023</span>
           <span>1 h 38 min</span>
           <span>
@@ -71,7 +71,7 @@ export const SmallCard = () => {
             />
           </span>
         </div>
-        <div className="mt-2 text-muted text-base">Description...</div>
+        <div className="mt-1 md:mt-2 text-muted text-sm md:text-base">Description...</div>
       </motion.div>
     </motion.div>
   );
