@@ -16,6 +16,14 @@ type ButtonWDropType = {
   btnStyles?: string;
 };
 
+const mobileIcons = [
+  { Icon: GrHomeRounded, href: "/", label: "Home" },
+  { Icon: IoBagOutline, href: "/", label: "Store" },
+  { Icon: MdLiveTv, href: "/", label: "Live TV" },
+  { Icon: PiSquaresFour, label: "Categories" },
+  { Icon: BsCollectionPlay, href: "/", label: "My Stuff" },
+];
+
 export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
   const [isOpen, setIsOpen] = useState(false);
   const currentPath = usePathname();
@@ -62,38 +70,26 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
           isOpen ? "flex" : "hidden"
         }`}
       >
-        <Link
-          href="/"
-          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
-        >
-          <GrHomeRounded className="w-3.5 h-3.5 md:w-4 md:h-4" />
-          Home
-        </Link>
-        <Link
-          href="/"
-          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
-        >
-          <IoBagOutline className="w-3.5 h-3.5 md:w-4 md:h-4" />
-          Store
-        </Link>
-        <Link
-          href="/"
-          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
-        >
-          <MdLiveTv className="w-3.5 h-3.5 md:w-4 md:h-4" />
-          Live TV
-        </Link>
-        <button className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]">
-          <PiSquaresFour className="w-3.5 h-3.5 md:w-4 md:h-4" />
-          Categories
-        </button>
-        <Link
-          href="/"
-          className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
-        >
-          <BsCollectionPlay className="w-3.5 h-3.5 md:w-4 md:h-4" />
-          My Stuff
-        </Link>
+        {mobileIcons.map((icon, i) =>
+          icon.href ? (
+            <Link
+              key={i}
+              href={icon.href}
+              className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
+            >
+              <icon.Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              {icon.label}
+            </Link>
+          ) : (
+            <button
+              key={i}
+              className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
+            >
+              <icon.Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              {icon.label}
+            </button>
+          )
+        )}
         <Link
           href="/"
           className="p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
