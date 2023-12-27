@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { IoSearch } from "react-icons/io5";
 import { GrHomeRounded } from "react-icons/gr";
 
 import { ButtonWithDropdown } from "./ButtonWithDropdown";
 import { LinkWithLabel } from "./LinkWithLabel";
 import pfp from "../../../public/pfp.jpg";
+import { SearchButton } from "./SearchButton";
 
 export const HeaderChildren = () => {
   return (
@@ -39,9 +39,7 @@ export const HeaderChildren = () => {
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
         />
         <div className="flex items-center h-full pl-3 lg:ml-8">
-          <button className="h-full px-3 xl:px-4 hover:bg-[#191e25]">
-            <IoSearch className="w-7 h-7 2xl:w-8 2xl:h-8 text-muted" />
-          </button>
+          <SearchButton />
           <button className="flex items-center px-3 h-full hover:bg-[#191e25] group-hover:rounded-r-lg">
             <p className="mr-4 text-muted text-lg hidden xl:block">Gabriel</p>
             <Image
