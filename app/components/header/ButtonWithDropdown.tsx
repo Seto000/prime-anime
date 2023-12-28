@@ -66,7 +66,7 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
         </motion.div>
       </button>
       <div
-        className={`flex-col bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen lg:w-full top-full text-muted absolute lg:shadow-custom ${
+        className={`flex-col bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen lg:w-full top-full text-muted absolute lg:shadow-custom z-10 ${
           isOpen ? "flex" : "hidden"
         }`}
       >
