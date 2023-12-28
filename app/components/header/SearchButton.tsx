@@ -35,6 +35,9 @@ export const SearchButton = () => {
                 required
                 autoFocus
               />
+              <span className="pl-3 pr-1 flex items-center h-full">
+                <input type="reset" className="px-3 py-1 font-normal hover:bg-white hover:text-black rounded-lg" value="Clear"/>
+              </span>
             </form>
           </div>
         </div>
