@@ -11,7 +11,11 @@ export const HeaderChildren = () => {
   return (
     <>
       <div className="flex items-center justify-between h-12 lg:justify-center lg:h-10 xl:h-12 bg-blue1 lg:rounded-lg lg:pl-4 2xl:h-14">
-        <ButtonWithDropdown text="Menu" btnStyles="lg:hidden text-white" />
+        <ButtonWithDropdown
+          text="Menu"
+          btnStyles="lg:hidden text-white"
+          useMobile
+        />
         <Link href="/home" className="text-lg lg:mr-12 xl:text-xl 2xl:text-2xl">
           prime anime
         </Link>
