@@ -6,6 +6,8 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export const SearchButton = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <>
       <button
@@ -34,9 +36,18 @@ export const SearchButton = () => {
                 className="h-full w-full bg-inherit pl-2 lg:pl-4 lg:placeholder:text-xl pr-0.5 py-[1px] placeholder:text-muted placeholder:text-lg outline-none rounded-lg"
                 required
                 autoFocus
+                onChange={(e) => setInputValue(e.target.value)}
+                value={inputValue}
               />
               <span className="pl-3 pr-1 flex items-center h-full">
-                <input type="reset" className="px-3 py-1 font-normal hover:bg-white hover:text-black rounded-lg" value="Clear"/>
+                {inputValue !== "" && (
+                  <input
+                    type="reset"
+                    className="px-3 py-1 font-normal hover:bg-white hover:text-black rounded-lg"
+                    value="Clear"
+                    onClick={() => setInputValue("")}
+                  />
+                )}
               </span>
             </form>
           </div>

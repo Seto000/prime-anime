@@ -20,7 +20,11 @@ const mobileIcons = [
   { Icon: GrHomeRounded, href: "/", label: "Home" },
   { Icon: IoBagOutline, href: "/", label: "Store" },
   { Icon: MdLiveTv, href: "/", label: "Live TV" },
-  { Icon: PiSquaresFour, label: "Categories" },
+  {
+    Icon: PiSquaresFour,
+    label: "Categories",
+    subCategories: [{ label: "Genres" }, { label: "Featured Collections" }],
+  },
   { Icon: BsCollectionPlay, href: "/", label: "My Stuff" },
 ];
 
@@ -70,24 +74,31 @@ export const ButtonWithDropdown = ({ text, btnStyles }: ButtonWDropType) => {
           isOpen ? "flex" : "hidden"
         }`}
       >
-        {mobileIcons.map((icon, i) =>
-          icon.href ? (
+        {mobileIcons.map((item, i) =>
+          item.href ? (
             <Link
               key={i}
-              href={icon.href}
+              href={item.href}
               className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
             >
-              <icon.Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              {icon.label}
+              <item.Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              {item.label}
             </Link>
           ) : (
-            <button
-              key={i}
-              className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
-            >
-              <icon.Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              {icon.label}
-            </button>
+            <>
+              <button
+                key={i}
+                className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
+              >
+                <item.Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                {item.label}
+                <IoChevronDown className="w-3 h-3" />
+              </button>
+              {item.subCategories &&
+                item.subCategories.map((subCategory, j) => (
+                  <button key={j} className="flex lg:hidden items-center py-1 pl-10 text-start min-h-[48px]">{subCategory.label}</button>
+                ))}
+            </>
           )
         )}
         <Link
