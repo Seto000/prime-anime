@@ -1,6 +1,13 @@
-export const scaleUp = { scale: 1.1, transition: { type: "spring", duration: 0.6 } };
+export const scaleUp = {
+  scale: 1.1,
+  transition: { type: "spring", duration: 0.6 },
+};
 
 export const scaleDown = {
   scale: 0.9,
   transition: { type: "spring", duration: 0.6 },
+};
+
+export const rotateChevron = (condition: boolean) => {
+  return { rotate: condition ? 180 : 0 };
 };
