@@ -79,9 +79,9 @@ export const ButtonWithDropdown = ({
       <div
         className={`${
           desktopIcons?.some((item) => "links" in item)
-            ? "flex justify-evenly lg:w-full left-0 "
-            : "flex-col lg:w-fit "
-        } bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen top-full text-muted absolute lg:shadow-custom z-10 ${
+            ? "flex justify-evenly lg:w-full left-0"
+            : "flex-col lg:w-fit"
+        } bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen overflow-y-auto top-full text-muted absolute lg:shadow-custom z-10 pb-12 lg:pb-0 ${
           isOpen ? "flex" : "hidden"
         }`}
       >
