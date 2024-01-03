@@ -4,6 +4,8 @@ import { MdLiveTv } from "react-icons/md";
 import { PiSquaresFour } from "react-icons/pi";
 import { BsCollectionPlay } from "react-icons/bs";
 
+import { subCategories } from "./subCategoriesData";
+
 export const mobileIcons = [
   { Icon: GrHomeRounded, href: "/", label: "Home" },
   { Icon: IoBagOutline, href: "/", label: "Store" },
@@ -11,16 +13,7 @@ export const mobileIcons = [
   {
     Icon: PiSquaresFour,
     label: "Categories",
-    subCategories: [
-      {
-        label: "Genres",
-        links: [{ label: "Action and adventure", href: "/" }, {label: "Anime", href: "/"}],
-      },
-      {
-        label: "Featured Collections",
-        links: [{ label: "Sports", href: "/" }, { label: "Home Premiere", href: "/" }],
-      },
-    ],
+    subCategories,
   },
   { Icon: BsCollectionPlay, href: "/", label: "My Stuff" },
 ];

@@ -6,6 +6,7 @@ import { ButtonWithDropdown } from "./ButtonWithDropdown";
 import { LinkWithLabel } from "./LinkWithLabel";
 import pfp from "../../../public/pfp.jpg";
 import { SearchButton } from "./SearchButton";
+import { subCategories } from "./subCategoriesData";
 
 export const HeaderChildren = () => {
   return (
@@ -48,16 +49,7 @@ export const HeaderChildren = () => {
         <ButtonWithDropdown
           text="Categories"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
-          desktopIcons={[
-            {
-              label: "Genres",
-              links: [{ label: "Action and adventure", href: "/" }, {label: "Anime", href: "/"}],
-            },
-            {
-              label: "Featured Collections",
-              links: [{ label: "Sports", href: "/" }, { label: "Home Premiere", href: "/" }],
-            },
-          ]}
+          desktopIcons={subCategories}
         />
         <ButtonWithDropdown
           text="My Stuff"

@@ -79,7 +79,7 @@ export const ButtonWithDropdown = ({
       <div
         className={`${
           desktopIcons?.some((item) => "links" in item)
-            ? "flex justify-evenly lg:w-full left-1/2 -translate-x-1/2"
+            ? "flex justify-evenly lg:w-full left-0 "
             : "flex-col lg:w-fit "
         } bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen top-full text-muted absolute lg:shadow-custom z-10 ${
           isOpen ? "flex" : "hidden"
@@ -148,12 +148,21 @@ export const ButtonWithDropdown = ({
         {!useMobile &&
           desktopIcons?.map((item, i, arr) =>
             "links" in item ? (
-              <div key={i} className="pl-4 py-2 whitespace-nowrap">
-                <span className="py-2 xl:py-3 text-white text-lg">{item.label}</span>
-                <ul>
+              <div key={i} className="pl-4 py-2">
+                <span className="py-2 xl:py-3 text-white text-lg block">
+                  {item.label}
+                </span>
+                <ul
+                  className={`${
+                    item.links.length > 6 ? "columns-2" : "columns-1"
+                  }`}
+                >
                   {item.links.map((link, i) => (
                     <li key={i}>
-                      <Link href={link.href} className="p-2 xl:p-3 block">
+                      <Link
+                        href={link.href}
+                        className="p-2 xl:p-3 block hover:bg-white hover:text-black rounded-lg"
+                      >
                         {link.label}
                       </Link>
                     </li>
