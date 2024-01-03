@@ -13,7 +13,7 @@ export const HeaderChildren = () => {
       <div className="flex items-center justify-between h-12 lg:justify-center lg:h-10 xl:h-12 bg-blue1 lg:rounded-lg lg:pl-4 2xl:h-14">
         <ButtonWithDropdown
           text="Menu"
-          btnStyles="lg:hidden text-white"
+          btnStyles="lg:hidden text-white relative"
           useMobile
         />
         <Link href="/home" className="text-lg lg:mr-12 xl:text-xl 2xl:text-2xl">
@@ -22,10 +22,21 @@ export const HeaderChildren = () => {
         <ButtonWithDropdown
           text="Home"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
+          desktopIcons={[
+            { label: "All", href: "/" },
+            { label: "Movies", href: "/" },
+            { label: "TV shows", href: "/" },
+            { label: "Sports", href: "/" },
+          ]}
         />
         <ButtonWithDropdown
           text="Store"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
+          desktopIcons={[
+            { label: "All", href: "/" },
+            { label: "Rent or buy", href: "/" },
+            { label: "Channels", href: "/" },
+          ]}
         />
         <LinkWithLabel
           href="/"
@@ -37,10 +48,25 @@ export const HeaderChildren = () => {
         <ButtonWithDropdown
           text="Categories"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
+          desktopIcons={[
+            {
+              label: "Genres",
+              links: [{ label: "Action and adventure", href: "/" }, {label: "Anime", href: "/"}],
+            },
+            {
+              label: "Featured Collections",
+              links: [{ label: "Sports", href: "/" }, { label: "Home Premiere", href: "/" }],
+            },
+          ]}
         />
         <ButtonWithDropdown
           text="My Stuff"
           btnStyles="hidden lg:flex lg:text-base xl:text-xl"
+          desktopIcons={[
+            { label: "All", href: "/" },
+            { label: "Watchlist", href: "/" },
+            { label: "Purchases & Rentals", href: "/" },
+          ]}
         />
         <div className="flex items-center h-full pl-3 lg:ml-8">
           <SearchButton />

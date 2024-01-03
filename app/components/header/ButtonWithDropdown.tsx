@@ -18,7 +18,7 @@ type ButtonWDropType = {
   text: string;
   btnStyles?: string;
   useMobile?: boolean;
-  desktopIcons?: HrefLabel[];
+  desktopIcons?: HrefLabel[] | { label: string; links: HrefLabel[] }[];
 };
 
 export const ButtonWithDropdown = ({
@@ -49,7 +49,7 @@ export const ButtonWithDropdown = ({
         },
       }}
       whileHover="hover"
-      className={`flex relative h-full md:text-lg ${btnStyles} ${
+      className={`flex h-full md:text-lg ${btnStyles} ${
         isOpen && "!bg-[#191e25]"
       }`}
       onMouseEnter={() => setIsOpen(true)}
@@ -77,7 +77,11 @@ export const ButtonWithDropdown = ({
         </motion.div>
       </button>
       <div
-        className={`flex-col bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen lg:w-full top-full text-muted absolute lg:shadow-custom z-10 ${
+        className={`${
+          desktopIcons?.some((item) => "links" in item)
+            ? "flex justify-evenly lg:w-full left-1/2 -translate-x-1/2"
+            : "flex-col lg:w-fit "
+        } bg-[#191e25] rounded-b-lg h-screen lg:h-fit w-screen top-full text-muted absolute lg:shadow-custom z-10 ${
           isOpen ? "flex" : "hidden"
         }`}
       >
@@ -141,30 +145,33 @@ export const ButtonWithDropdown = ({
               </>
             )
           )}
-        <Link
-          href="/"
-          className="p-2 xl:p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
-        >
-          All
-        </Link>
-        <Link
-          href="/"
-          className="p-2 xl:p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
-        >
-          Movies
-        </Link>
-        <Link
-          href="/"
-          className="p-2 xl:p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline"
-        >
-          TV shows
-        </Link>
-        <Link
-          href="/"
-          className="p-2 xl:p-3 hover:bg-white hover:text-black whitespace-nowrap rounded-b-lg hidden lg:inline"
-        >
-          Sports
-        </Link>
+        {!useMobile &&
+          desktopIcons?.map((item, i, arr) =>
+            "links" in item ? (
+              <div key={i} className="pl-4 py-2 whitespace-nowrap">
+                <span className="py-2 xl:py-3 text-white text-lg">{item.label}</span>
+                <ul>
+                  {item.links.map((link, i) => (
+                    <li key={i}>
+                      <Link href={link.href} className="p-2 xl:p-3 block">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <Link
+                key={i}
+                href={"href" in item ? item.href : ""}
+                className={`p-2 xl:p-3 hover:bg-white hover:text-black whitespace-nowrap hidden lg:inline ${
+                  arr.length - 1 === i && "rounded-b-lg"
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          )}
       </div>
     </motion.div>
   );
