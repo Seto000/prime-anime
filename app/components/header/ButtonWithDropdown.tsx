@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { IoChevronDown } from "react-icons/io5";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import { rotateChevron } from "@/app/utils/animations";
 import { mobileIcons } from "./mobileIconsData";
@@ -97,9 +97,8 @@ export const ButtonWithDropdown = ({
                 {item.label}
               </Link>
             ) : (
-              <>
+              <Fragment key={i}>
                 <button
-                  key={i}
                   className="flex lg:hidden items-center gap-2 pl-6 min-h-[48px]"
                   onClick={() => subMenuHandler(item.label)}
                 >
@@ -113,10 +112,9 @@ export const ButtonWithDropdown = ({
                 </button>
                 {openSubMenus.includes(item.label) &&
                   item.subCategories &&
-                  item.subCategories.map((subCategory, j) => (
+                  item.subCategories.map((subCategory) => (
                     <>
                       <button
-                        key={j}
                         className="flex lg:hidden items-center gap-2 pl-10 min-h-[48px]"
                         onClick={() => subMenuHandler(subCategory.label)}
                       >
@@ -142,7 +140,7 @@ export const ButtonWithDropdown = ({
                         ))}
                     </>
                   ))}
-              </>
+              </Fragment>
             )
           )}
         {!useMobile &&

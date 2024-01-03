@@ -23,7 +23,7 @@ export const SearchButton = () => {
         )}
       </button>
       {isOpen && (
-        <div className="absolute bg-[#191e25] h-screen w-screen lg:w-full lg:h-20 xl:h-28 top-1/2 lg:top-full left-1/2 -translate-x-1/2 rounded-b-lg">
+        <div data-testid="dropdown-test" className="absolute bg-[#191e25] h-screen w-screen lg:w-full lg:h-20 xl:h-28 top-1/2 lg:top-full left-1/2 -translate-x-1/2 rounded-b-lg">
           <div className="w-full h-[72px] lg:h-full p-3 lg:p-4 xl:p-6">
             <form
               action=""
