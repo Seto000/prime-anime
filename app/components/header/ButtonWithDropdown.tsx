@@ -147,7 +147,7 @@ export const ButtonWithDropdown = ({
           desktopIcons?.map((item, i, arr) =>
             "links" in item ? (
               <div key={i} className="pl-4 py-2">
-                <span className="py-2 xl:py-3 text-white text-lg block">
+                <span className="py-2 xl:py-3 text-white text-lg xl:text-[22px] block">
                   {item.label}
                 </span>
                 <ul
