@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { GrHomeRounded } from "react-icons/gr";
 
 import { ButtonWithDropdown } from "./ButtonWithDropdown";
+import { ProfileButton } from "./ProfileButton";
 import { LinkWithLabel } from "./LinkWithLabel";
-import pfp from "../../../public/pfp.jpg";
 import { SearchButton } from "./SearchButton";
 import { subCategories } from "./subCategoriesData";
 
@@ -62,14 +61,7 @@ export const HeaderChildren = () => {
         />
         <div className="flex items-center h-full pl-3 lg:ml-8">
           <SearchButton />
-          <button className="flex items-center px-3 h-full hover:bg-[#191e25] group-hover:rounded-r-lg">
-            <p className="mr-4 text-muted text-lg hidden xl:block">Gabriel</p>
-            <Image
-              src={pfp}
-              alt="Profile picture"
-              className="rounded-full w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
-            />
-          </button>
+          <ProfileButton />
         </div>
       </div>
       <div className="flex items-center h-12 pl-3 md:pl-5 text-muted font-semibold lg:hidden header-gradient">
